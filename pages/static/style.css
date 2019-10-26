@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; }
+
+section.editor {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 60px; }
+  section.editor .CodeMirror {
+    height: 100%; }
+  section.editor a.button {
+    grid-column: 1 / 3;
+    background: #222;
+    transition: 1s;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    cursor: pointer; }
+    section.editor a.button:hover {
+      background: #111; }
+
+/*# sourceMappingURL=style.css.map */

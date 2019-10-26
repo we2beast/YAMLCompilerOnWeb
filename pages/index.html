@@ -1,0 +1,54 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Django App</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.35.0/codemirror.css">
+    <link rel="stylesheet" type="text/css" href="https://codemirror.net/theme/darcula.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.35.0/codemirror.js"></script>
+    <script src="https://codemirror.net/mode/yaml/yaml.js"></script>
+</head>
+<body>
+<section class="editor">
+    <textarea id='editor'># Employee records
+-  martin:
+ name: Martin D'vloper
+ job: Developer
+ skills:
+  - python
+  - perl
+  - pascal
+-  tabitha:
+ name: Tabitha Bitumen
+ job: Developer
+ skills:
+  - lisp
+  - fortran
+  - erlang
+    </textarea>
+    <textarea id='output'># Output
+    </textarea>
+    <a class="button">Compile via YAML Compiler</a>
+</section>
+</body>
+</html>
+
+<script>
+    let editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
+        mode: "text/x-yaml",
+        lineNumbers: true,
+        theme: 'darcula'
+    });
+    editor.save()
+
+    let editor2 = CodeMirror.fromTextArea(document.getElementById('output'), {
+        mode: "yaml",
+    });
+    editor2.save()
+</script>
